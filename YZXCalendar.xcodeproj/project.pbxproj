@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11EB7D6A1F02421800CB4BD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D691F02421800CB4BD0 /* main.m */; };
+		11EB7D6D1F02421800CB4BD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D6C1F02421800CB4BD0 /* AppDelegate.m */; };
+		11EB7D701F02421800CB4BD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D6F1F02421800CB4BD0 /* ViewController.m */; };
+		11EB7D731F02421900CB4BD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EB7D711F02421900CB4BD0 /* Main.storyboard */; };
+		11EB7D751F02421900CB4BD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EB7D741F02421900CB4BD0 /* Assets.xcassets */; };
+		11EB7D781F02421900CB4BD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EB7D761F02421900CB4BD0 /* LaunchScreen.storyboard */; };
+		11EB7D831F02421900CB4BD0 /* YZXCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D821F02421900CB4BD0 /* YZXCalendarTests.m */; };
+		11EB7D8E1F02421900CB4BD0 /* YZXCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D8D1F02421900CB4BD0 /* YZXCalendarUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11EB7D7F1F02421900CB4BD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11EB7D5D1F02421800CB4BD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11EB7D641F02421800CB4BD0;
+			remoteInfo = YZXCalendar;
+		};
+		11EB7D8A1F02421900CB4BD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11EB7D5D1F02421800CB4BD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11EB7D641F02421800CB4BD0;
+			remoteInfo = YZXCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11EB7D651F02421800CB4BD0 /* YZXCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZXCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EB7D691F02421800CB4BD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11EB7D6B1F02421800CB4BD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11EB7D6C1F02421800CB4BD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11EB7D6E1F02421800CB4BD0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		11EB7D6F1F02421800CB4BD0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		11EB7D721F02421900CB4BD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11EB7D741F02421900CB4BD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11EB7D771F02421900CB4BD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11EB7D791F02421900CB4BD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11EB7D7E1F02421900CB4BD0 /* YZXCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EB7D821F02421900CB4BD0 /* YZXCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZXCalendarTests.m; sourceTree = "<group>"; };
+		11EB7D841F02421900CB4BD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11EB7D891F02421900CB4BD0 /* YZXCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EB7D8D1F02421900CB4BD0 /* YZXCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZXCalendarUITests.m; sourceTree = "<group>"; };
+		11EB7D8F1F02421900CB4BD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11EB7D621F02421800CB4BD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D7B1F02421900CB4BD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D861F02421900CB4BD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11EB7D5C1F02421800CB4BD0 = {
+			isa = PBXGroup;
+			children = (
+				11EB7D671F02421800CB4BD0 /* YZXCalendar */,
+				11EB7D811F02421900CB4BD0 /* YZXCalendarTests */,
+				11EB7D8C1F02421900CB4BD0 /* YZXCalendarUITests */,
+				11EB7D661F02421800CB4BD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11EB7D661F02421800CB4BD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11EB7D651F02421800CB4BD0 /* YZXCalendar.app */,
+				11EB7D7E1F02421900CB4BD0 /* YZXCalendarTests.xctest */,
+				11EB7D891F02421900CB4BD0 /* YZXCalendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11EB7D671F02421800CB4BD0 /* YZXCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				11EB7D6B1F02421800CB4BD0 /* AppDelegate.h */,
+				11EB7D6C1F02421800CB4BD0 /* AppDelegate.m */,
+				11EB7D6E1F02421800CB4BD0 /* ViewController.h */,
+				11EB7D6F1F02421800CB4BD0 /* ViewController.m */,
+				11EB7D711F02421900CB4BD0 /* Main.storyboard */,
+				11EB7D741F02421900CB4BD0 /* Assets.xcassets */,
+				11EB7D761F02421900CB4BD0 /* LaunchScreen.storyboard */,
+				11EB7D791F02421900CB4BD0 /* Info.plist */,
+				11EB7D681F02421800CB4BD0 /* Supporting Files */,
+			);
+			path = YZXCalendar;
+			sourceTree = "<group>";
+		};
+		11EB7D681F02421800CB4BD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11EB7D691F02421800CB4BD0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11EB7D811F02421900CB4BD0 /* YZXCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				11EB7D821F02421900CB4BD0 /* YZXCalendarTests.m */,
+				11EB7D841F02421900CB4BD0 /* Info.plist */,
+			);
+			path = YZXCalendarTests;
+			sourceTree = "<group>";
+		};
+		11EB7D8C1F02421900CB4BD0 /* YZXCalendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11EB7D8D1F02421900CB4BD0 /* YZXCalendarUITests.m */,
+				11EB7D8F1F02421900CB4BD0 /* Info.plist */,
+			);
+			path = YZXCalendarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11EB7D641F02421800CB4BD0 /* YZXCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11EB7D921F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendar" */;
+			buildPhases = (
+				11EB7D611F02421800CB4BD0 /* Sources */,
+				11EB7D621F02421800CB4BD0 /* Frameworks */,
+				11EB7D631F02421800CB4BD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YZXCalendar;
+			productName = YZXCalendar;
+			productReference = 11EB7D651F02421800CB4BD0 /* YZXCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11EB7D7D1F02421900CB4BD0 /* YZXCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11EB7D951F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendarTests" */;
+			buildPhases = (
+				11EB7D7A1F02421900CB4BD0 /* Sources */,
+				11EB7D7B1F02421900CB4BD0 /* Frameworks */,
+				11EB7D7C1F02421900CB4BD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11EB7D801F02421900CB4BD0 /* PBXTargetDependency */,
+			);
+			name = YZXCalendarTests;
+			productName = YZXCalendarTests;
+			productReference = 11EB7D7E1F02421900CB4BD0 /* YZXCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11EB7D881F02421900CB4BD0 /* YZXCalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11EB7D981F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendarUITests" */;
+			buildPhases = (
+				11EB7D851F02421900CB4BD0 /* Sources */,
+				11EB7D861F02421900CB4BD0 /* Frameworks */,
+				11EB7D871F02421900CB4BD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11EB7D8B1F02421900CB4BD0 /* PBXTargetDependency */,
+			);
+			name = YZXCalendarUITests;
+			productName = YZXCalendarUITests;
+			productReference = 11EB7D891F02421900CB4BD0 /* YZXCalendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11EB7D5D1F02421800CB4BD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "尹星";
+				TargetAttributes = {
+					11EB7D641F02421800CB4BD0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					11EB7D7D1F02421900CB4BD0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 11EB7D641F02421800CB4BD0;
+					};
+					11EB7D881F02421900CB4BD0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 11EB7D641F02421800CB4BD0;
+					};
+				};
+			};
+			buildConfigurationList = 11EB7D601F02421800CB4BD0 /* Build configuration list for PBXProject "YZXCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11EB7D5C1F02421800CB4BD0;
+			productRefGroup = 11EB7D661F02421800CB4BD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11EB7D641F02421800CB4BD0 /* YZXCalendar */,
+				11EB7D7D1F02421900CB4BD0 /* YZXCalendarTests */,
+				11EB7D881F02421900CB4BD0 /* YZXCalendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11EB7D631F02421800CB4BD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EB7D781F02421900CB4BD0 /* LaunchScreen.storyboard in Resources */,
+				11EB7D751F02421900CB4BD0 /* Assets.xcassets in Resources */,
+				11EB7D731F02421900CB4BD0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D7C1F02421900CB4BD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D871F02421900CB4BD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11EB7D611F02421800CB4BD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EB7D701F02421800CB4BD0 /* ViewController.m in Sources */,
+				11EB7D6D1F02421800CB4BD0 /* AppDelegate.m in Sources */,
+				11EB7D6A1F02421800CB4BD0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D7A1F02421900CB4BD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EB7D831F02421900CB4BD0 /* YZXCalendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EB7D851F02421900CB4BD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EB7D8E1F02421900CB4BD0 /* YZXCalendarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11EB7D801F02421900CB4BD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11EB7D641F02421800CB4BD0 /* YZXCalendar */;
+			targetProxy = 11EB7D7F1F02421900CB4BD0 /* PBXContainerItemProxy */;
+		};
+		11EB7D8B1F02421900CB4BD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11EB7D641F02421800CB4BD0 /* YZXCalendar */;
+			targetProxy = 11EB7D8A1F02421900CB4BD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11EB7D711F02421900CB4BD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11EB7D721F02421900CB4BD0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11EB7D761F02421900CB4BD0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11EB7D771F02421900CB4BD0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11EB7D901F02421900CB4BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11EB7D911F02421900CB4BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11EB7D931F02421900CB4BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YZXCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11EB7D941F02421900CB4BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YZXCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		11EB7D961F02421900CB4BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YZXCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXCalendar.app/YZXCalendar";
+			};
+			name = Debug;
+		};
+		11EB7D971F02421900CB4BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YZXCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXCalendar.app/YZXCalendar";
+			};
+			name = Release;
+		};
+		11EB7D991F02421900CB4BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YZXCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YZXCalendar;
+			};
+			name = Debug;
+		};
+		11EB7D9A1F02421900CB4BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YZXCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yx.YZXCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YZXCalendar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11EB7D601F02421800CB4BD0 /* Build configuration list for PBXProject "YZXCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EB7D901F02421900CB4BD0 /* Debug */,
+				11EB7D911F02421900CB4BD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11EB7D921F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EB7D931F02421900CB4BD0 /* Debug */,
+				11EB7D941F02421900CB4BD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11EB7D951F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EB7D961F02421900CB4BD0 /* Debug */,
+				11EB7D971F02421900CB4BD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11EB7D981F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EB7D991F02421900CB4BD0 /* Debug */,
+				11EB7D9A1F02421900CB4BD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11EB7D5D1F02421800CB4BD0 /* Project object */;
+}
