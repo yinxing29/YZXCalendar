@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "YZXCalendarView.h"
+#import "YZXCalendarHelper.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) YZXCalendarView             *calendarView;
 
 @end
 
@@ -16,13 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.view addSubview:self.calendarView];
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 懒加载
+- (YZXCalendarView *)calendarView
+{
+    if (!_calendarView) {
+        NSDateFormatter *formatter = [YZXCalendarHelper createFormatterWithDateFormat:@"yyyy年MM月dd日"];
+        _calendarView = [[YZXCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) withStartDateString:@"2016年01月01日" endDateString:[formatter stringFromDate:[NSDate date]]];
+        _calendarView.customSelect = YES;
+    }
+    return _calendarView;
 }
 
 
