@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YZXCalendarDelegate.h"
 
-@interface YZXCalendarView : UIView
+@interface YZXCalendarView : UIView <YZXCalendarDelegate>
 
 
 /**
@@ -25,6 +25,10 @@
 @property (nonatomic, assign) BOOL         customSelect;
 
 @property (nonatomic, weak) id<YZXCalendarDelegate>         delegate;
-@property (nonatomic, weak) id<YZXCalendarDataSource>       dataSource;
+//customSelect为NO时使用
+@property (nonatomic, copy) NSString             *startDate;
+
+//customSelect为YES时使用
+@property (nonatomic, copy) NSArray             *dateArray;
 
 @end

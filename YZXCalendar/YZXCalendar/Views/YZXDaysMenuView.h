@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YZXCalendarDelegate.h"
 
 @interface YZXDaysMenuView : UIView
 
@@ -21,5 +22,12 @@
 - (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString;
 
 @property (nonatomic, assign) BOOL         customSelect;
+
+@property (nonatomic, weak) id<YZXCalendarDelegate>         delegate;
+
+//日历单选
+@property (nonatomic, copy) NSString             *startDate;
+//自定义日历(可选择两个时间的范围)
+@property (nonatomic, copy) NSArray              *dateArray;
 
 @end

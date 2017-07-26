@@ -20,7 +20,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTx-Hp-uzp">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -28,10 +28,10 @@
             </view>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="LTx-Hp-uzp" secondAttribute="trailing" id="2e0-Rl-qgn"/>
-                <constraint firstAttribute="bottom" secondItem="LTx-Hp-uzp" secondAttribute="bottom" id="KXp-CY-BvC"/>
-                <constraint firstItem="LTx-Hp-uzp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MtQ-ZT-TUd"/>
-                <constraint firstItem="LTx-Hp-uzp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Qan-km-7oN"/>
+                <constraint firstAttribute="bottom" secondItem="LTx-Hp-uzp" secondAttribute="bottom" id="U5s-4z-HXv"/>
+                <constraint firstItem="LTx-Hp-uzp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UBd-P5-8Bh"/>
+                <constraint firstItem="LTx-Hp-uzp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="egb-Zg-CKS"/>
+                <constraint firstAttribute="trailing" secondItem="LTx-Hp-uzp" secondAttribute="trailing" id="rwh-ly-AoZ"/>
             </constraints>
             <connections>
                 <outlet property="day" destination="LTx-Hp-uzp" id="9VO-w3-ylP"/>

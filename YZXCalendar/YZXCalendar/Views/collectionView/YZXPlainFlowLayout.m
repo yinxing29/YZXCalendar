@@ -21,7 +21,6 @@
     return self;
 }
 
-
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     //UICollectionViewLayoutAttributes：我称它为collectionView中的item（包括cell和header、footer这些）的《结构信息》
@@ -123,10 +122,8 @@
             attributes.zIndex = 7;
         }
     }
-    
     //转换回不可变数组，并返回
     return [superArray copy];
-    
 }
 
 //return YES;表示一旦滑动就实时调用上面这个layoutAttributesForElementsInRect:方法

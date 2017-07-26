@@ -11,12 +11,6 @@
 #import "YZXDaysMenuView.h"
 
 @interface YZXCalendarView ()
-{
-    struct {
-        unsigned int didSetTheMaxData : 1;
-        unsigned int didSetTheMinData : 1;
-    } _dataSourceFlags;
-}
 
 @property (nonatomic, strong) YZXWeekMenuView             *weekMenuView;
 @property (nonatomic, strong) YZXDaysMenuView             *daysMenuView;
@@ -51,11 +45,27 @@
     [self addSubview:self.daysMenuView];
 }
 
+#pragma mark - <YZXCalendarDelegate>
+- (void)clickCalendarWithStartDate:(NSString *)startDate andEndDate:(NSString *)endDate
+{
+    if (self.customSelect && _delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
+        [_delegate clickCalendarWithStartDate:startDate andEndDate:endDate];
+    }
+}
+
+- (void)clickCalendarDate:(NSString *)date
+{
+    if (!self.customSelect && _delegate && [_delegate respondsToSelector:@selector(clickCalendarDate:)]) {
+        [_delegate clickCalendarDate:date];
+    }
+}
+
 #pragma mark - 懒加载
 - (YZXWeekMenuView *)weekMenuView
 {
     if (!_weekMenuView) {
-        _weekMenuView = [[YZXWeekMenuView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 40)];
+        _weekMenuView = [[YZXWeekMenuView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 20)];
+        _weekMenuView.backgroundColor = [UIColor whiteColor];
     }
     return _weekMenuView;
 }
@@ -63,7 +73,8 @@
 - (YZXDaysMenuView *)daysMenuView
 {
     if (!_daysMenuView) {
-        _daysMenuView = [[YZXDaysMenuView alloc] initWithFrame:CGRectMake(0, 40, self.bounds.size.width, self.bounds.size.height - 40) withStartDateString:_startDateString endDateString:_endDateString];
+        _daysMenuView = [[YZXDaysMenuView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.weekMenuView.frame), self.bounds.size.width, self.bounds.size.height - CGRectGetMaxY(self.weekMenuView.frame)) withStartDateString:_startDateString endDateString:_endDateString];
+        _daysMenuView.delegate = self;
     }
     return _daysMenuView;
 }
@@ -75,16 +86,16 @@
     _daysMenuView.customSelect = _customSelect;
 }
 
-- (void)setDelegate:(id<YZXCalendarDelegate>)delegate
+- (void)setStartDate:(NSString *)startDate
 {
-    _delegate = delegate;
+    _startDate = startDate;
+    _daysMenuView.startDate = _startDate;
 }
 
-- (void)setDataSource:(id<YZXCalendarDataSource>)dataSource
+- (void)setDateArray:(NSArray *)dateArray
 {
-    _dataSource = dataSource;
-    _dataSourceFlags.didSetTheMaxData = [_dataSource respondsToSelector:@selector(maxDateInCalendar:)];
-    _dataSourceFlags.didSetTheMinData = [_dataSource respondsToSelector:@selector(minDateInCalendar:)];
+    _dateArray = dateArray;
+    _daysMenuView.dateArray = _dateArray;
 }
 
 @end

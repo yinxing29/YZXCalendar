@@ -13,11 +13,15 @@
 #import "YZXCalendarModel.h"
 #import "YZXCalendarCollectionViewHeaderView.h"
 
-#define self_width self.bounds.size.width
-#define dayView_width self_width / 7.f
+#define iPhone5SE ([[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f)
+#define iPhone6Plus_6sPlus ([[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f)
+
+#define collectionView_width (iPhone5SE ? self.bounds.size.width - 1.5 : (iPhone6Plus_6sPlus ? self.bounds.size.width - 1 : self.bounds.size.width - 0.5))
+
+#define dayView_width (collectionView_width / 7.f)
 
 static const CGFloat dayView_Height = 40.0;
-static const CGFloat collectionView_headerHeight = 40.0;
+static const CGFloat collectionView_headerHeight = 20.0;
 
 @interface YZXDaysMenuView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -77,13 +81,13 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     [self addSubview:self.collectionView];
 }
 
-- (BOOL)date:(NSDate *)dateA isTheSameDayThan:(NSDate *)dateB
-{
-    NSDateComponents *componentsA = [self.calendarHelper.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateA];
-    NSDateComponents *componentsB = [self.calendarHelper.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateB];
-    
-    return componentsA.year == componentsB.year && componentsA.month == componentsB.month && componentsA.day == componentsB.day;
-}
+//- (BOOL)date:(NSDate *)dateA isTheSameDayThan:(NSDate *)dateB
+//{
+//    NSDateComponents *componentsA = [self.calendarHelper.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateA];
+//    NSDateComponents *componentsB = [self.calendarHelper.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateB];
+//    
+//    return componentsA.year == componentsB.year && componentsA.month == componentsB.month && componentsA.day == componentsB.day;
+//}
 
 #pragma mark - <UICollectionViewDelegate,UICollectionViewDataSource>
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -101,13 +105,13 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     YZXCalendarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellIdentify forIndexPath:indexPath];
     [cell layoutContentViewOfCollectionViewCellWithCellIndxePath:indexPath model:self.collectionViewData[indexPath.section]];
     
-    if ([YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:self.collectionViewData[indexPath.section]] == WWTDateEqualToToday && !self.customSelect) {
+    if (_selectedArray.count == 0 && [YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:self.collectionViewData[indexPath.section]] == WWTDateEqualToToday && !self.customSelect) {
         [_selectedArray addObject:indexPath];
     }
     
     if (self.selectedArray.count == 2 && [indexPath compare:self.selectedArray.firstObject] == NSOrderedDescending && [indexPath compare:self.selectedArray.lastObject] == NSOrderedAscending) {
-        [cell changeContentViewBackgroundColor:[UIColor colorWithRed:255 / 255.0 green:230 / 255.0 blue:230 / 255.0 alpha:1]];
-        [cell changeDayTextColor:[UIColor redColor]];
+        [cell changeContentViewBackgroundColor:[UIColor colorWithRed:221.0 / 255.0 green:81.0 / 255.0 blue:77.0 / 255.0 alpha:0.75]];
+        [cell changeDayTextColor:[UIColor whiteColor]];
     }
     
     //将选中的按钮改变样式
@@ -130,9 +134,14 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
             {
                 //设置点击的cell的样式
                 [self p_changeTheSelectedCellStyleWithIndexPath:indexPath];
-                
                 //记录当前点击的cell
                 [self.selectedArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+                
+                if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
+                    NSString *startString = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[indexPath.section].headerTitle,indexPath.item - (self.collectionViewData[indexPath.section].firstDayOfTheMonth - 2)];
+                    
+                    [_delegate clickCalendarWithStartDate:startString andEndDate:nil];
+                }
             }
                 break;
             case 1:
@@ -140,11 +149,12 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
                 if (self.selectedArray.firstObject == indexPath) {
                     [self p_recoveryIsNotSelectedWithIndexPath:self.selectedArray.firstObject];
                     [self.selectedArray removeAllObjects];
+                    if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
+                        [_delegate clickCalendarWithStartDate:nil andEndDate:nil];
+                    }
+                    
                     return;
                 }
-                //设置点击的cell的样式
-                [self p_changeTheSelectedCellStyleWithIndexPath:indexPath];
-
                 //记录当前点击的cell
                 [self.selectedArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
                 
@@ -152,45 +162,44 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
                 [self p_sortingTheSelectedArray];
                 //时间选择完毕，刷新界面
                 [self.collectionView reloadData];
+                //
+                if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
+                    NSString *startDate = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[self.selectedArray.firstObject.section].headerTitle,self.selectedArray.firstObject.item - (self.collectionViewData[self.selectedArray.firstObject.section].firstDayOfTheMonth - 2)];
+                    NSString *endDate = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[self.selectedArray.lastObject.section].headerTitle,self.selectedArray.lastObject.item - (self.collectionViewData[self.selectedArray.lastObject.section].firstDayOfTheMonth - 2)];
+                    [_delegate clickCalendarWithStartDate:startDate andEndDate:endDate];
+                }
             }
                 break;
             case 2:
             {
                 //重新选择时，将之前点击的cell恢复成为点击状态，并移除数组中所有对象
-                [self.selectedArray enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    [self p_recoveryIsNotSelectedWithIndexPath:obj];
-                }];
                 [self.selectedArray removeAllObjects];
-                
-                //设置点击的cell的样式
-                [self p_changeTheSelectedCellStyleWithIndexPath:indexPath];
                 
                 //记录当前点击的cell
                 [self.selectedArray addObject:indexPath];
                 
                 [self.collectionView reloadData];
+                //
+                if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
+                    NSString *startString = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[indexPath.section].headerTitle,indexPath.item - (self.collectionViewData[indexPath.section].firstDayOfTheMonth - 2)];
+                    [_delegate clickCalendarWithStartDate:startString andEndDate:nil];
+                }
             }
                 break;
             default:
                 break;
         }
     }else {//非自定义选择
-        //已经选择
-        if (self.selectedArray.count > 0) {
-            NSMutableArray <NSIndexPath *> *selectedArray = [NSMutableArray array];
-            [self.selectedArray enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                //恢复成为未选中状态
-                [self p_recoveryIsNotSelectedWithIndexPath:obj];
-                [selectedArray addObject:obj];
-            }];
-            //移除已恢复的cell
-            [self.selectedArray removeObjectsInArray:[selectedArray copy]];
-        }
-        //设置点击的cell的样式
-        [self p_changeTheSelectedCellStyleWithIndexPath:indexPath];
-        
+        //移除已选中cell
+        [self.selectedArray removeAllObjects];
         //记录当前点击的按钮
         [self.selectedArray addObject:indexPath];
+        [self.collectionView reloadData];
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarDate:)]) {
+            NSString *dateString = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[indexPath.section].headerTitle,indexPath.item - (self.collectionViewData[indexPath.section].firstDayOfTheMonth - 2)];
+            [_delegate clickCalendarDate:dateString];
+        }
     }
 }
 
@@ -212,7 +221,7 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     }
 }
 
-//改变选中cell的样式
+//改变cell的样式为选中
 - (void)p_changeTheSelectedCellStyleWithIndexPath:(NSIndexPath *)indexPath
 {
     YZXCalendarCollectionViewCell *cell = (YZXCalendarCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
@@ -233,7 +242,6 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     }else {
         [selectedCell changeDayTextColor:[UIColor blackColor]];
     }
-
 }
 
 //判断是否为周末和当天
@@ -249,19 +257,60 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     if (!_collectionView) {
         YZXPlainFlowLayout *layout = [[YZXPlainFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(dayView_width, dayView_Height);
-        layout.headerReferenceSize = CGSizeMake(self_width, collectionView_headerHeight);
+        layout.headerReferenceSize = CGSizeMake(collectionView_width, collectionView_headerHeight);
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        layout.minimumLineSpacing = 0;
+        layout.minimumLineSpacing = 6;
         layout.minimumInteritemSpacing = 0;
         layout.naviHeight = collectionView_headerHeight;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self_width, self.bounds.size.height) collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake((iPhone5SE ? 0.5 : 0), 0, collectionView_width, self.bounds.size.height) collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        
         [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:(self.collectionViewData.lastObject.numberOfDaysOfTheMonth + self.collectionViewData.lastObject.firstDayOfTheMonth - 2) inSection:self.collectionViewData.count - 1] animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
     };
     return _collectionView;
+}
+
+#pragma mark - setter
+- (void)setStartDate:(NSString *)startDate
+{
+    _startDate = startDate;
+    if (!_startDate) {
+        return;
+    }
+    //传入一个时间时，查找其indexPath信息，用在collectionView上展现
+    [self.collectionViewData enumerateObjectsUsingBlock:^(YZXCalendarModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.headerTitle isEqualToString:[_startDate substringWithRange:NSMakeRange(0, 8)]]) {
+            NSInteger day = [_startDate substringWithRange:NSMakeRange(8, 2)].integerValue;
+            [self.selectedArray addObject:[NSIndexPath indexPathForItem:(day + obj.firstDayOfTheMonth - 2) inSection:idx]];
+            [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:(self.collectionViewData[idx].sectionRow * 7 - 1) inSection:idx] animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
+            *stop = YES;
+        }
+    }];
+    
+    [_collectionView reloadData];
+}
+
+- (void)setDateArray:(NSArray *)dateArray
+{
+    _dateArray = dateArray;
+    if (!_dateArray) {
+        return;
+    }
+    //传入两个时间时，查找其indexPath信息，用在collectionView上展现
+    [self.collectionViewData enumerateObjectsUsingBlock:^(YZXCalendarModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.headerTitle isEqualToString:[_dateArray.firstObject substringWithRange:NSMakeRange(0, 8)]]) {
+            NSInteger day = [_dateArray.firstObject substringWithRange:NSMakeRange(8, 2)].integerValue;
+            [self.selectedArray addObject:[NSIndexPath indexPathForItem:(day + obj.firstDayOfTheMonth - 2) inSection:idx]];
+        }
+        if ([obj.headerTitle isEqualToString:[_dateArray.lastObject substringWithRange:NSMakeRange(0, 8)]]) {
+            NSInteger day = [_dateArray.lastObject substringWithRange:NSMakeRange(8, 2)].integerValue;
+            [self.selectedArray addObject:[NSIndexPath indexPathForItem:(day + obj.firstDayOfTheMonth - 2) inSection:idx]];
+            [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:(self.collectionViewData[idx].sectionRow * 7 - 1) inSection:idx] animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
+        }
+    }];
+    
+    [_collectionView reloadData];
 }
 
 - (void)setCustomSelect:(BOOL)customSelect

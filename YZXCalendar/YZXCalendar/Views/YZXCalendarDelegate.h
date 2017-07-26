@@ -1,27 +1,24 @@
 //
 //  YZXCalendarDelegate.h
-//  YZXCalendar
+//  Replenishment
 //
-//  Created by 尹星 on 2017/7/6.
-//  Copyright © 2017年 尹星. All rights reserved.
+//  Created by 尹星 on 2017/7/19.
+//  Copyright © 2017年 ruwang. All rights reserved.
 //
 
 #ifndef YZXCalendarDelegate_h
 #define YZXCalendarDelegate_h
 
-@class YZXCalendarView;
+#import <UIKit/UIKit.h>
 
 @protocol YZXCalendarDelegate <NSObject>
 
+- (void)clickCalendarDate:(NSString *)date;
+
+- (void)clickCalendarWithStartDate:(NSString *)startDate
+                        andEndDate:(NSString *)endDate;
 
 @end
 
-@protocol YZXCalendarDataSource <NSObject>
-
-- (NSDate *)maxDateInCalendar:(YZXCalendarView *)calendar;
-
-- (NSDate *)minDateInCalendar:(YZXCalendarView *)calendar;
-
-@end
 
 #endif /* YZXCalendarDelegate_h */

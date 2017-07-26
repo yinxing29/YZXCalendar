@@ -46,7 +46,7 @@ static const CGFloat lineView_height = 0.5;
     [days enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UILabel *weekdayLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width / 7.f * idx, 0, self.bounds.size.width / 7.f, self.bounds.size.height - lineView_height)];
         weekdayLabel.text = obj;
-        weekdayLabel.font = [UIFont systemFontOfSize:14.0];
+        weekdayLabel.font = [UIFont systemFontOfSize:10.0];
         weekdayLabel.textAlignment = NSTextAlignmentCenter;
         weekdayLabel.textColor = [UIColor blackColor];
         if (idx == 0 || idx == 6) {

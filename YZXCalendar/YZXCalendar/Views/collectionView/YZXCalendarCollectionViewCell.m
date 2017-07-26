@@ -56,6 +56,11 @@
     self.backgroundColor = backgroundColor;
 }
 
+- (void)changeDayBackgroundColor:(UIColor *)backgroundColor
+{
+    self.day.backgroundColor = backgroundColor;
+}
+
 - (void)changeDayTextColor:(UIColor *)textColor
 {
     self.day.textColor = textColor;

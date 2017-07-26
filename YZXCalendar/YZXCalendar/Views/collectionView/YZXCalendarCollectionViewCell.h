@@ -18,6 +18,8 @@
 
 - (void)changeDayTextColor:(UIColor *)textColor;
 
+- (void)changeDayBackgroundColor:(UIColor *)backgroundColor;
+
 - (NSString *)getTheCellDayText;
 
 @end

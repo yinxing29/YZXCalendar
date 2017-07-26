@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 @class YZXCalendarModel;
 
@@ -30,5 +29,14 @@ typedef NS_ENUM(NSUInteger, WWTDateWithTodayType) {
 + (instancetype)helper;
 
 - (WWTDateWithTodayType)determineWhetherForTodayWithIndexPaht:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model;
+
+- (NSString *)beforeOneDayWithDate:(NSString *)dateString;
+- (NSString *)afterOneDayWithDate:(NSString *)dateString;
+
+- (NSString *)beforeOneMonthWithDate:(NSString *)dateString;
+- (NSString *)afterOneMonthWithDate:(NSString *)dateString;
+
+- (NSString *)beforeOneYearWithDate:(NSString *)dateString;
+- (NSString *)afterOneYearWithDate:(NSString *)dateString;
 
 @end

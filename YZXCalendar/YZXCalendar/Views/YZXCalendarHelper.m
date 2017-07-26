@@ -8,6 +8,7 @@
 
 #import "YZXCalendarHelper.h"
 #import "YZXCalendarModel.h"
+#import <UIKit/UIKit.h>
 
 @interface YZXCalendarHelper () {
     NSCalendar *_calendar;
@@ -66,6 +67,63 @@
         }
     }
     return NO;
+}
+
+- (NSString *)beforeOneDayWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheDayWithNumber:-1 withDate:dateString];
+}
+- (NSString *)afterOneDayWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheDayWithNumber:1 withDate:dateString];
+}
+
+- (NSString *)p_calculateTheDayWithNumber:(NSInteger)number withDate:(NSString *)dateString
+{
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.day = number;
+    NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[self.formatter dateFromString:dateString] options:0];
+    return [self.formatter stringFromDate:textDate];
+}
+
+- (NSString *)beforeOneMonthWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheMonthWithNumber:-1 withDate:dateString];
+}
+
+- (NSString *)afterOneMonthWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheMonthWithNumber:1 withDate:dateString];
+}
+
+- (NSString *)p_calculateTheMonthWithNumber:(NSInteger)number withDate:(NSString *)dateString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy年MM月";
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.month = number;
+    NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[formatter dateFromString:dateString] options:0];
+    return [formatter stringFromDate:textDate];
+}
+
+- (NSString *)beforeOneYearWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheYearWithNumber:-1 withDate:dateString];
+}
+
+- (NSString *)afterOneYearWithDate:(NSString *)dateString
+{
+    return [self p_calculateTheYearWithNumber:1 withDate:dateString];
+}
+
+- (NSString *)p_calculateTheYearWithNumber:(NSInteger)number withDate:(NSString *)dateString
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy年";
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year = number;
+    NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[formatter dateFromString:dateString] options:0];
+    return [formatter stringFromDate:textDate];
 }
 
 - (NSDateFormatter *)formatter
