@@ -23,7 +23,8 @@
     // Initialization code
 }
 
-- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model
+- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath
+                                                         model:(YZXCalendarModel *)model
 {
     self.backgroundColor = [UIColor whiteColor];
     NSInteger firstDayInMonth = model.firstDayOfTheMonth;

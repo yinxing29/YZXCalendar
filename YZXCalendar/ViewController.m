@@ -29,7 +29,9 @@
 {
     if (!_calendarView) {
         NSDateFormatter *formatter = [YZXCalendarHelper createFormatterWithDateFormat:@"yyyy年MM月dd日"];
-        _calendarView = [[YZXCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) withStartDateString:@"2016年01月01日" endDateString:[formatter stringFromDate:[NSDate date]]];
+        _calendarView = [[YZXCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)
+                                           withStartDateString:@"2016年01月01日"
+                                                 endDateString:[formatter stringFromDate:[NSDate date]]];
         _calendarView.customSelect = YES;
     }
     return _calendarView;

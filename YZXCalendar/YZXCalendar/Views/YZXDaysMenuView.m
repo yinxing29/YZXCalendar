@@ -45,7 +45,9 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
     NSString *_endDateString;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString
+- (instancetype)initWithFrame:(CGRect)frame
+          withStartDateString:(NSString *)startDateString
+                endDateString:(NSString *)endDateString
 {
     self = [super initWithFrame:frame];
     if (self) {

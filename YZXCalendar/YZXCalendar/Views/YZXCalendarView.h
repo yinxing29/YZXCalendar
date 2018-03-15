@@ -20,7 +20,9 @@
  @param endDateString 日历的结束时间(日期格式：yyyy年MM月dd日)
  @return self
  */
-- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString;
+- (instancetype)initWithFrame:(CGRect)frame
+          withStartDateString:(NSString *)startDateString
+                endDateString:(NSString *)endDateString;
 
 @property (nonatomic, assign) BOOL         customSelect;
 

@@ -12,7 +12,8 @@
 
 @interface YZXCalendarCollectionViewCell : UICollectionViewCell
 
-- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model;
+- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath
+                                                         model:(YZXCalendarModel *)model;
 
 - (void)changeContentViewBackgroundColor:(UIColor *)backgroundColor;
 
