@@ -8,7 +8,6 @@
 
 #import "YZXCalendarCollectionViewCell.h"
 #import "YZXCalendarModel.h"
-#import "YZXCalendarHelper.h"
 
 @interface YZXCalendarCollectionViewCell ()
 
@@ -23,8 +22,7 @@
     // Initialization code
 }
 
-- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath
-                                                         model:(YZXCalendarModel *)model
+- (void)layoutContentViewOfCollectionViewCellWithCellIndxePath:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model
 {
     self.backgroundColor = [UIColor whiteColor];
     NSInteger firstDayInMonth = model.firstDayOfTheMonth;
@@ -38,15 +36,15 @@
     }
     //周末字体为红色
     if (indexPath.item % 7 == 0 || indexPath.item % 7 == 6) {
-        self.day.textColor = [UIColor redColor];
+        self.day.textColor = CustomRedColor;
     }else {
-        self.day.textColor = [UIColor blackColor];
+        self.day.textColor = CustomBlackColor;
     }
     //今天
-    if ([YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:model] == WWTDateEqualToToday) {
+    if ([YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:model] == YZXDateEqualToToday) {
         self.day.text = @"今天";
-        self.day.textColor = [UIColor redColor];
-    }else if ([YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:model] == WWTDateLaterThanToday) {//判断日期是否超过今天
+        self.day.textColor = CustomRedColor;
+    }else if ([YZXCalendarHelper.helper determineWhetherForTodayWithIndexPaht:indexPath model:model] == YZXDateLaterThanToday) {//判断日期是否超过今天
         self.day.textColor = [UIColor grayColor];
         self.userInteractionEnabled = NO;
     }

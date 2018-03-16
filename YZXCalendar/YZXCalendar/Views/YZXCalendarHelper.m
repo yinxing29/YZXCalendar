@@ -8,16 +8,33 @@
 
 #import "YZXCalendarHelper.h"
 #import "YZXCalendarModel.h"
-#import <UIKit/UIKit.h>
 
 @interface YZXCalendarHelper () {
     NSCalendar *_calendar;
-    NSDateFormatter *_formatter;
 }
 
 @end
 
 @implementation YZXCalendarHelper
+
++ (instancetype)helper
+{
+    static YZXCalendarHelper *helper;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        helper = [[YZXCalendarHelper alloc] init];
+        
+        helper.yearReportStartDate = @"1970年";
+        helper.yearReportEndDate = [helper.yearFormatter stringFromDate:[NSDate date]];
+        helper.monthReportStartDate = @"1970年01月";
+        helper.monthReportEndDate = [helper.yearAndMonthFormatter stringFromDate:[NSDate date]];
+        helper.dayReportStartDate = @"1970年01月01日";
+        helper.dayReportEndDate = [helper.yearMonthAndDayFormatter stringFromDate:[NSDate date]];
+        helper.customDateStartDate = helper.dayReportStartDate;
+        helper.customDateEndDate = helper.dayReportEndDate;
+    });
+    return helper;
+}
 
 - (NSCalendar *)calendar
 {
@@ -49,21 +66,30 @@
     return components.year == otherComponents.year && components.month == otherComponents.month && components.day == otherComponents.day;
 }
 
-- (WWTDateWithTodayType)determineWhetherForTodayWithIndexPaht:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model
+- (BOOL)date:(NSDate *)date isTheSameMonthThan:(NSDate *)otherDate
+{
+    NSDateComponents *components = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:date];
+    NSDateComponents *otherComponents = [self.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:otherDate];
+    
+    return components.year == otherComponents.year && components.month == otherComponents.month;
+
+}
+
+- (YZXDateWithTodayType)determineWhetherForTodayWithIndexPaht:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model
 {
     //今天
-    NSDateFormatter *formatter = [[YZXCalendarHelper new] formatter];
+    NSDateFormatter *formatter = self.yearMonthAndDayFormatter;
     //获取当前cell上表示的天数
     NSString *dayString = [NSString stringWithFormat:@"%@%ld日",model.headerTitle,indexPath.item - (model.firstDayOfTheMonth - 2)];
     NSDate *dayDate = [formatter dateFromString:dayString];
     
     if (dayDate) {
         if ([YZXCalendarHelper.helper date:[NSDate date] isTheSameDateThan:dayDate]) {
-            return WWTDateEqualToToday;
+            return YZXDateEqualToToday;
         }else if ([dayDate compare:[NSDate date]] == NSOrderedDescending) {
-            return WWTDateLaterThanToday;
+            return YZXDateLaterThanToday;
         }else {
-            return WWTDateEarlierThanToday;
+            return YZXDateEarlierThanToday;
         }
     }
     return NO;
@@ -82,8 +108,8 @@
 {
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.day = number;
-    NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[self.formatter dateFromString:dateString] options:0];
-    return [self.formatter stringFromDate:textDate];
+    NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[self.yearMonthAndDayFormatter dateFromString:dateString] options:0];
+    return [self.yearMonthAndDayFormatter stringFromDate:textDate];
 }
 
 - (NSString *)beforeOneMonthWithDate:(NSString *)dateString
@@ -126,23 +152,19 @@
     return [formatter stringFromDate:textDate];
 }
 
-- (NSDateFormatter *)formatter
+- (NSDateFormatter *)yearFormatter
 {
-    if (!_formatter) {
-        _formatter = [[NSDateFormatter alloc] init];
-        _formatter.dateFormat = @"yyyy年MM月dd日";
-    }
-    return _formatter;
+    return [[self class] createFormatterWithDateFormat:@"yyyy年"];
 }
 
-+ (instancetype)helper
+- (NSDateFormatter *)yearAndMonthFormatter
 {
-    static YZXCalendarHelper *helper;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        helper = [[YZXCalendarHelper alloc] init];
-    });
-    return helper;
+    return [[self class] createFormatterWithDateFormat:@"yyyy年MM月"];
+}
+
+- (NSDateFormatter *)yearMonthAndDayFormatter
+{
+    return [[self class] createFormatterWithDateFormat:@"yyyy年MM月dd日"];
 }
 
 @end

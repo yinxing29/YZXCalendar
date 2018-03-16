@@ -8,7 +8,6 @@
 
 #import "YZXWeekMenuView.h"
 #import "YZXDaysMenuView.h"
-#import "YZXCalendarHelper.h"
 
 static const CGFloat lineView_height = 0.5;
 
@@ -33,7 +32,7 @@ static const CGFloat lineView_height = 0.5;
 
 - (void)p_initData
 {
-    self.calendarHelper = [[YZXCalendarHelper alloc] init];
+    self.calendarHelper = YZXCalendarHelper.helper;
 }
 
 - (void)p_initView
@@ -48,9 +47,9 @@ static const CGFloat lineView_height = 0.5;
         weekdayLabel.text = obj;
         weekdayLabel.font = [UIFont systemFontOfSize:10.0];
         weekdayLabel.textAlignment = NSTextAlignmentCenter;
-        weekdayLabel.textColor = [UIColor blackColor];
+        weekdayLabel.textColor = CustomBlackColor;
         if (idx == 0 || idx == 6) {
-            weekdayLabel.textColor = [UIColor redColor];
+            weekdayLabel.textColor = CustomRedColor;
         }
         [self addSubview:weekdayLabel];
     }];

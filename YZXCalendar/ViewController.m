@@ -8,11 +8,17 @@
 
 #import "ViewController.h"
 #import "YZXCalendarView.h"
-#import "YZXCalendarHelper.h"
+#import "YZXSelectDateViewController.h"
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @property (nonatomic, strong) YZXCalendarView             *calendarView;
+
+@property (nonatomic, assign) YZXTimeToChooseType         selectedType;
+@property (nonatomic, copy) NSString             *startDate;
+@property (nonatomic, copy) NSString             *endDate;
 
 @end
 
@@ -24,18 +30,19 @@
     
 }
 
-#pragma mark - 懒加载
-- (YZXCalendarView *)calendarView
-{
-    if (!_calendarView) {
-        NSDateFormatter *formatter = [YZXCalendarHelper createFormatterWithDateFormat:@"yyyy年MM月dd日"];
-        _calendarView = [[YZXCalendarView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)
-                                           withStartDateString:@"2016年01月01日"
-                                                 endDateString:[formatter stringFromDate:[NSDate date]]];
-        _calendarView.customSelect = YES;
-    }
-    return _calendarView;
+- (IBAction)buttonPressed:(UIButton *)sender {
+    YZXSelectDateViewController *VC = [[YZXSelectDateViewController alloc] init];
+    __weak typeof(self) weak_self = self;
+    VC.confirmTheDateBlock = ^(NSString *startDate, NSString *endDate, YZXTimeToChooseType selectedType) {
+        weak_self.selectedType = selectedType;
+        weak_self.startDate = startDate;
+        weak_self.endDate = endDate;
+        weak_self.dateLabel.text = [NSString stringWithFormat:@"%@ - %@",startDate,endDate];
+    };
+    VC.selectedType = self.selectedType;
+    VC.startDate    = self.startDate;
+    VC.endDate      = self.endDate;
+    [self presentViewController:VC animated:YES completion:nil];
 }
-
 
 @end

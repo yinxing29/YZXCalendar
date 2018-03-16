@@ -25,6 +25,17 @@
 		11EB7D781F02421900CB4BD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EB7D761F02421900CB4BD0 /* LaunchScreen.storyboard */; };
 		11EB7D831F02421900CB4BD0 /* YZXCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D821F02421900CB4BD0 /* YZXCalendarTests.m */; };
 		11EB7D8E1F02421900CB4BD0 /* YZXCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EB7D8D1F02421900CB4BD0 /* YZXCalendarUITests.m */; };
+		85227210205A57DE00C4C0A8 /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522720E205A57DD00C4C0A8 /* UIColor+Hexadecimal.m */; };
+		85227217205A5A5200C4C0A8 /* YZXSelectDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85227216205A5A5200C4C0A8 /* YZXSelectDateViewController.m */; };
+		85227221205A5A8000C4C0A8 /* YZXMonthlyReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85227219205A5A8000C4C0A8 /* YZXMonthlyReportView.m */; };
+		85227222205A5A8000C4C0A8 /* YZXCustomDateBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522721B205A5A8000C4C0A8 /* YZXCustomDateBottomView.m */; };
+		85227223205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522721E205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.m */; };
+		85227224205A5A8000C4C0A8 /* YZXAnnualReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522721F205A5A8000C4C0A8 /* YZXAnnualReportView.m */; };
+		85227229205A5B1F00C4C0A8 /* SJPageNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85227228205A5B1F00C4C0A8 /* SJPageNavigationView.m */; };
+		8522722F205A5DB100C4C0A8 /* YZXDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522722B205A5DB100C4C0A8 /* YZXDateModel.m */; };
+		85227230205A5DB100C4C0A8 /* YZXMonthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8522722C205A5DB100C4C0A8 /* YZXMonthModel.m */; };
+		85227234205A5E3000C4C0A8 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85227232205A5E2F00C4C0A8 /* BaseTableView.m */; };
+		96B2DA8BA75D2035637F7EBD /* libPods-YZXCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA38D864AAF3F31BC465A52 /* libPods-YZXCalendar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +91,31 @@
 		11EB7D891F02421900CB4BD0 /* YZXCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EB7D8D1F02421900CB4BD0 /* YZXCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZXCalendarUITests.m; sourceTree = "<group>"; };
 		11EB7D8F1F02421900CB4BD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CE0AED41A141C7AB53525F3 /* Pods-YZXCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZXCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-YZXCalendar/Pods-YZXCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		6BA38D864AAF3F31BC465A52 /* libPods-YZXCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YZXCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85227208205A54D100C4C0A8 /* YZXCalendarHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZXCalendarHeader.pch; sourceTree = "<group>"; };
+		85227209205A573100C4C0A8 /* YZXCalendarHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZXCalendarHeader.h; sourceTree = "<group>"; };
+		8522720E205A57DD00C4C0A8 /* UIColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexadecimal.m"; sourceTree = "<group>"; };
+		8522720F205A57DE00C4C0A8 /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
+		85227215205A5A5200C4C0A8 /* YZXSelectDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXSelectDateViewController.h; sourceTree = "<group>"; };
+		85227216205A5A5200C4C0A8 /* YZXSelectDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXSelectDateViewController.m; sourceTree = "<group>"; };
+		85227219205A5A8000C4C0A8 /* YZXMonthlyReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXMonthlyReportView.m; sourceTree = "<group>"; };
+		8522721A205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXMonthTableViewHeaderView.h; sourceTree = "<group>"; };
+		8522721B205A5A8000C4C0A8 /* YZXCustomDateBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXCustomDateBottomView.m; sourceTree = "<group>"; };
+		8522721C205A5A8000C4C0A8 /* YZXAnnualReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXAnnualReportView.h; sourceTree = "<group>"; };
+		8522721D205A5A8000C4C0A8 /* YZXMonthlyReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXMonthlyReportView.h; sourceTree = "<group>"; };
+		8522721E205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXMonthTableViewHeaderView.m; sourceTree = "<group>"; };
+		8522721F205A5A8000C4C0A8 /* YZXAnnualReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXAnnualReportView.m; sourceTree = "<group>"; };
+		85227220205A5A8000C4C0A8 /* YZXCustomDateBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXCustomDateBottomView.h; sourceTree = "<group>"; };
+		85227227205A5B1F00C4C0A8 /* SJPageNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPageNavigationView.h; sourceTree = "<group>"; };
+		85227228205A5B1F00C4C0A8 /* SJPageNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPageNavigationView.m; sourceTree = "<group>"; };
+		8522722B205A5DB100C4C0A8 /* YZXDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXDateModel.m; sourceTree = "<group>"; };
+		8522722C205A5DB100C4C0A8 /* YZXMonthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZXMonthModel.m; sourceTree = "<group>"; };
+		8522722D205A5DB100C4C0A8 /* YZXDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXDateModel.h; sourceTree = "<group>"; };
+		8522722E205A5DB100C4C0A8 /* YZXMonthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZXMonthModel.h; sourceTree = "<group>"; };
+		85227232205A5E2F00C4C0A8 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		85227233205A5E2F00C4C0A8 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		8C0565A879ACB80989080A31 /* Pods-YZXCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YZXCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YZXCalendar/Pods-YZXCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B2DA8BA75D2035637F7EBD /* libPods-YZXCalendar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +147,8 @@
 		11E452781F0DD10700DBD08B /* YZXCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				85227211205A596E00C4C0A8 /* controller */,
+				85227207205A54A300C4C0A8 /* EngineeringDocuments */,
 				11E452791F0DD10700DBD08B /* Model */,
 				11E4527C1F0DD10700DBD08B /* Views */,
 			);
@@ -119,6 +158,7 @@
 		11E452791F0DD10700DBD08B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8522722A205A5DB100C4C0A8 /* DateSelection - 日期选择 */,
 				11E4527A1F0DD10700DBD08B /* YZXCalendarModel.h */,
 				11E4527B1F0DD10700DBD08B /* YZXCalendarModel.m */,
 			);
@@ -128,6 +168,7 @@
 		11E4527C1F0DD10700DBD08B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				85227218205A5A8000C4C0A8 /* DateSelection - 日期选择 */,
 				11E4527D1F0DD10700DBD08B /* collectionView */,
 				11E452881F0DD10800DBD08B /* YZXCalendarHelper.h */,
 				11E452891F0DD10800DBD08B /* YZXCalendarHelper.m */,
@@ -164,6 +205,8 @@
 				11EB7D811F02421900CB4BD0 /* YZXCalendarTests */,
 				11EB7D8C1F02421900CB4BD0 /* YZXCalendarUITests */,
 				11EB7D661F02421800CB4BD0 /* Products */,
+				6DEEB11A152D2DCBEA2F32C4 /* Pods */,
+				3BFCE92E483104FC59F3916F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,6 +263,105 @@
 			path = YZXCalendarUITests;
 			sourceTree = "<group>";
 		};
+		3BFCE92E483104FC59F3916F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BA38D864AAF3F31BC465A52 /* libPods-YZXCalendar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DEEB11A152D2DCBEA2F32C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C0565A879ACB80989080A31 /* Pods-YZXCalendar.debug.xcconfig */,
+				3CE0AED41A141C7AB53525F3 /* Pods-YZXCalendar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		85227207205A54A300C4C0A8 /* EngineeringDocuments */ = {
+			isa = PBXGroup;
+			children = (
+				85227231205A5E2F00C4C0A8 /* Base */,
+				85227225205A5B1F00C4C0A8 /* Vendor */,
+				8522720A205A578000C4C0A8 /* Categroy */,
+				85227208205A54D100C4C0A8 /* YZXCalendarHeader.pch */,
+				85227209205A573100C4C0A8 /* YZXCalendarHeader.h */,
+			);
+			path = EngineeringDocuments;
+			sourceTree = "<group>";
+		};
+		8522720A205A578000C4C0A8 /* Categroy */ = {
+			isa = PBXGroup;
+			children = (
+				8522720F205A57DE00C4C0A8 /* UIColor+Hexadecimal.h */,
+				8522720E205A57DD00C4C0A8 /* UIColor+Hexadecimal.m */,
+			);
+			path = Categroy;
+			sourceTree = "<group>";
+		};
+		85227211205A596E00C4C0A8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				85227215205A5A5200C4C0A8 /* YZXSelectDateViewController.h */,
+				85227216205A5A5200C4C0A8 /* YZXSelectDateViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		85227218205A5A8000C4C0A8 /* DateSelection - 日期选择 */ = {
+			isa = PBXGroup;
+			children = (
+				85227219205A5A8000C4C0A8 /* YZXMonthlyReportView.m */,
+				8522721A205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.h */,
+				8522721B205A5A8000C4C0A8 /* YZXCustomDateBottomView.m */,
+				8522721C205A5A8000C4C0A8 /* YZXAnnualReportView.h */,
+				8522721D205A5A8000C4C0A8 /* YZXMonthlyReportView.h */,
+				8522721E205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.m */,
+				8522721F205A5A8000C4C0A8 /* YZXAnnualReportView.m */,
+				85227220205A5A8000C4C0A8 /* YZXCustomDateBottomView.h */,
+			);
+			path = "DateSelection - 日期选择";
+			sourceTree = "<group>";
+		};
+		85227225205A5B1F00C4C0A8 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				85227226205A5B1F00C4C0A8 /* SJPageNavigationView */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		85227226205A5B1F00C4C0A8 /* SJPageNavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				85227227205A5B1F00C4C0A8 /* SJPageNavigationView.h */,
+				85227228205A5B1F00C4C0A8 /* SJPageNavigationView.m */,
+			);
+			path = SJPageNavigationView;
+			sourceTree = "<group>";
+		};
+		8522722A205A5DB100C4C0A8 /* DateSelection - 日期选择 */ = {
+			isa = PBXGroup;
+			children = (
+				8522722B205A5DB100C4C0A8 /* YZXDateModel.m */,
+				8522722C205A5DB100C4C0A8 /* YZXMonthModel.m */,
+				8522722D205A5DB100C4C0A8 /* YZXDateModel.h */,
+				8522722E205A5DB100C4C0A8 /* YZXMonthModel.h */,
+			);
+			path = "DateSelection - 日期选择";
+			sourceTree = "<group>";
+		};
+		85227231205A5E2F00C4C0A8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				85227232205A5E2F00C4C0A8 /* BaseTableView.m */,
+				85227233205A5E2F00C4C0A8 /* BaseTableView.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,9 +369,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11EB7D921F02421900CB4BD0 /* Build configuration list for PBXNativeTarget "YZXCalendar" */;
 			buildPhases = (
+				199B032D1B40FE7C5AA3A4AA /* [CP] Check Pods Manifest.lock */,
 				11EB7D611F02421800CB4BD0 /* Sources */,
 				11EB7D621F02421800CB4BD0 /* Frameworks */,
 				11EB7D631F02421800CB4BD0 /* Resources */,
+				83185164C26EE4FED824ADF9 /* [CP] Embed Pods Frameworks */,
+				72CDD0649792B695CA2976CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,22 +496,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		199B032D1B40FE7C5AA3A4AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YZXCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72CDD0649792B695CA2976CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YZXCalendar/Pods-YZXCalendar-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/JSBadgeView/JSBadgeView.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JSBadgeView.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YZXCalendar/Pods-YZXCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83185164C26EE4FED824ADF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YZXCalendar/Pods-YZXCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11EB7D611F02421800CB4BD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				11E452931F0DD10800DBD08B /* YZXCalendarCollectionViewHeaderView.m in Sources */,
+				85227217205A5A5200C4C0A8 /* YZXSelectDateViewController.m in Sources */,
 				11EB7D701F02421800CB4BD0 /* ViewController.m in Sources */,
+				85227224205A5A8000C4C0A8 /* YZXAnnualReportView.m in Sources */,
 				11E452971F0DD10800DBD08B /* YZXCalendarHelper.m in Sources */,
 				11EB7D6D1F02421800CB4BD0 /* AppDelegate.m in Sources */,
+				85227234205A5E3000C4C0A8 /* BaseTableView.m in Sources */,
 				11EB7D6A1F02421800CB4BD0 /* main.m in Sources */,
+				85227230205A5DB100C4C0A8 /* YZXMonthModel.m in Sources */,
 				11E452901F0DD10800DBD08B /* YZXCalendarModel.m in Sources */,
+				85227223205A5A8000C4C0A8 /* YZXMonthTableViewHeaderView.m in Sources */,
 				11E452991F0DD10800DBD08B /* YZXDaysMenuView.m in Sources */,
+				85227222205A5A8000C4C0A8 /* YZXCustomDateBottomView.m in Sources */,
 				11E452951F0DD10800DBD08B /* YZXPlainFlowLayout.m in Sources */,
+				85227229205A5B1F00C4C0A8 /* SJPageNavigationView.m in Sources */,
+				85227210205A57DE00C4C0A8 /* UIColor+Hexadecimal.m in Sources */,
 				11E452981F0DD10800DBD08B /* YZXCalendarView.m in Sources */,
+				8522722F205A5DB100C4C0A8 /* YZXDateModel.m in Sources */,
 				11E452911F0DD10800DBD08B /* YZXCalendarCollectionViewCell.m in Sources */,
 				11E4529A1F0DD10800DBD08B /* YZXWeekMenuView.m in Sources */,
+				85227221205A5A8000C4C0A8 /* YZXMonthlyReportView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,11 +722,14 @@
 		};
 		11EB7D931F02421900CB4BD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0565A879ACB80989080A31 /* Pods-YZXCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TY93B32LV3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YZXCalendar/YZXCalendar/EngineeringDocuments/YZXCalendarHeader.pch";
 				INFOPLIST_FILE = YZXCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -529,11 +741,14 @@
 		};
 		11EB7D941F02421900CB4BD0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE0AED41A141C7AB53525F3 /* Pods-YZXCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TY93B32LV3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/YZXCalendar/YZXCalendar/EngineeringDocuments/YZXCalendarHeader.pch";
 				INFOPLIST_FILE = YZXCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

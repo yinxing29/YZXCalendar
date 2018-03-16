@@ -22,9 +22,7 @@
     NSString *_endDateString;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-          withStartDateString:(NSString *)startDateString
-                endDateString:(NSString *)endDateString
+- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -48,8 +46,7 @@
 }
 
 #pragma mark - <YZXCalendarDelegate>
-- (void)clickCalendarWithStartDate:(NSString *)startDate
-                        andEndDate:(NSString *)endDate
+- (void)clickCalendarWithStartDate:(NSString *)startDate andEndDate:(NSString *)endDate
 {
     if (self.customSelect && _delegate && [_delegate respondsToSelector:@selector(clickCalendarWithStartDate:andEndDate:)]) {
         [_delegate clickCalendarWithStartDate:startDate andEndDate:endDate];
@@ -99,6 +96,12 @@
 {
     _dateArray = dateArray;
     _daysMenuView.dateArray = _dateArray;
+}
+
+- (void)setMaxChooseNumber:(NSInteger)maxChooseNumber
+{
+    _maxChooseNumber = maxChooseNumber;
+    self.daysMenuView.maxChooseNumber = _maxChooseNumber;
 }
 
 @end
