@@ -12,11 +12,11 @@
 
 @interface YZXDateModel : NSObject
 
-@property (nonatomic, copy) NSString             *year;
-@property (nonatomic, copy) NSString             *quarter;
+@property (nonatomic, copy) NSString                              *year;
+@property (nonatomic, copy) NSString                              *quarter;
 @property (nonatomic, copy) NSArray <YZXMonthModel *>             *months;
-@property (nonatomic, copy) NSString             *week;
-@property (nonatomic, copy) NSString             *day;
+@property (nonatomic, copy) NSString                              *week;
+@property (nonatomic, copy) NSString                              *day;
 
 @property (nonatomic, assign) BOOL                 isSelected;
 @property (nonatomic, strong) NSIndexPath          *indexPath;

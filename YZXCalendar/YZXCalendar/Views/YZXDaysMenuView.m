@@ -201,7 +201,7 @@ static NSString *collectionViewHeaderIdentify = @"calendarHeader";
         [self.collectionView reloadData];
         
         if (_delegate && [_delegate respondsToSelector:@selector(clickCalendarDate:)]) {
-            NSString *dateString = [NSString stringWithFormat:@"%@%02ld日",self.collectionViewData[indexPath.section].headerTitle,indexPath.item - (self.collectionViewData[indexPath.section].firstDayOfTheMonth - 2)];
+            NSString *dateString = [NSString stringWithFormat:@"%@%02d日",self.collectionViewData[indexPath.section].headerTitle,indexPath.item - (self.collectionViewData[indexPath.section].firstDayOfTheMonth - 2)];
             [_delegate clickCalendarDate:dateString];
         }
     }

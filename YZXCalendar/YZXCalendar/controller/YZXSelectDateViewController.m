@@ -267,7 +267,7 @@ static const CGFloat blankSpace = 40.0;
 
 - (void)p_hideHUD
 {
-    [_hud hide:YES];
+    [_hud hideAnimated:YES];
     [_hud removeFromSuperViewOnHide];
     _hud = nil;
 }

@@ -10,8 +10,8 @@
 
 @interface YZXMonthModel : NSObject
 
-@property (nonatomic, copy) NSString             *month;
-@property (nonatomic, assign) BOOL         isSelected;
+@property (nonatomic, copy) NSString                  *month;
+@property (nonatomic, assign) BOOL                    isSelected;
 @property (nonatomic, strong) NSIndexPath             *indexPath;
 
 @end
