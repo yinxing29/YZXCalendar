@@ -16,9 +16,9 @@ typedef NS_ENUM(NSUInteger, YZXDateWithTodayType) {
     YZXDateLaterThanToday,//晚于当天
 };
 
-//销售报表中时间段选择
+//时间段选择
 typedef NS_ENUM(NSUInteger ,YZXTimeToChooseType) {
-    YZXTimeToChooseInAll = 0,
+    YZXTimeToChooseInAll = 0,//总累计，被注释掉了，用不到（自动忽略）
     YZXTimeToChooseInDay,
     YZXTimeToChooseInMonth,
     YZXTimeToChooseInYear,
@@ -31,25 +31,25 @@ typedef NS_ENUM(NSUInteger ,YZXTimeToChooseType) {
 
 
 /**
- 年报开始，结束时间（时间格式:yyyy年）
+ 年报开始，结束时间（时间格式:yyyy年）默认从1970年到至今
  */
 @property (nonatomic, copy) NSString         *yearReportStartDate;
 @property (nonatomic, copy) NSString         *yearReportEndDate;
 
 /**
- 月报开始，结束时间（时间格式:yyyy年MM月）
+ 月报开始，结束时间（时间格式:yyyy年MM月）默认从1970年01月到至今
  */
 @property (nonatomic, copy) NSString         *monthReportStartDate;
 @property (nonatomic, copy) NSString         *monthReportEndDate;
 
 /**
- 日报开始，结束时间（时间格式:yyyy年MM月dd日）
+ 日报开始，结束时间（时间格式:yyyy年MM月dd日）默认从1970年01月01日到至今
  */
 @property (nonatomic, copy) NSString         *dayReportStartDate;
 @property (nonatomic, copy) NSString         *dayReportEndDate;
 
 /**
- 自定义时间（自选时间段）开始，结束时间（时间格式:yyyy年MM月dd日）
+ 自定义时间（自选时间段）开始，结束时间（时间格式:yyyy年MM月dd日）默认从1970年01月01日到至今
  */
 @property (nonatomic, copy) NSString         *customDateStartDate;
 @property (nonatomic, copy) NSString         *customDateEndDate;

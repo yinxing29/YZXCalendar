@@ -39,7 +39,9 @@ static const CGFloat lineView_width = 0.5;
     BOOL     _isScrollDown;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString
+- (instancetype)initWithFrame:(CGRect)frame
+          withStartDateString:(NSString *)startDateString
+                endDateString:(NSString *)endDateString
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -60,7 +62,7 @@ static const CGFloat lineView_width = 0.5;
     _isScrollDown = YES;
     self.dataSource = [NSArray array];
 
-    NSDateFormatter *formatter = [YZXCalendarHelper createFormatterWithDateFormat:@"yyyy年MM月"];
+    NSDateFormatter *formatter = [YZXCalendarHelper helper].yearAndMonthFormatter;
     NSDate *startDate = [formatter dateFromString:_startDateString];
     NSDate *endDate = [formatter dateFromString:_endDateString];
     //获取两个时间段之间的所有年月份信息
@@ -160,21 +162,25 @@ static const CGFloat lineView_width = 0.5;
 {
     if (tableView == self.yearTableView) {
         [self scrollToTopOfSection:indexPath.row animated:YES];
-        [self changeSelectedIndexPathWithTableView:self.yearTableView selectedIndexPath:[NSIndexPath indexPathWithIndex:indexPath.row]];
+        [self changeSelectedIndexPathWithTableView:self.yearTableView
+                                 selectedIndexPath:[NSIndexPath indexPathWithIndex:indexPath.row]];
     }else {
-        [self changeSelectedIndexPathWithTableView:self.monthTableView selectedIndexPath:indexPath];
+        [self changeSelectedIndexPathWithTableView:self.monthTableView
+                                 selectedIndexPath:indexPath];
     }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
-{//下滑
+{
+    //下滑
     if ((tableView == self.monthTableView) && !_isScrollDown && (self.monthTableView.dragging || self.monthTableView.decelerating)) {
         [self selectRowAtIndexPath:section];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section
-{//上滑
+{
+    //上滑
     if ((tableView == self.monthTableView) && _isScrollDown && (self.monthTableView.dragging || self.monthTableView.decelerating)) {
         [self selectRowAtIndexPath:section + 1];
     }

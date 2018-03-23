@@ -43,7 +43,7 @@
 - (NSArray<YZXDateModel *> *)achieveMonthDateModelWithDate:(NSDate *)startDate toDate:(NSDate *)endDate
 {
     NSMutableArray *modelArray = [NSMutableArray array];
-    NSDateFormatter *formatter = [YZXCalendarHelper createFormatterWithDateFormat:@"yyyy年MM月"];
+    NSDateFormatter *formatter = [YZXCalendarHelper helper].yearAndMonthFormatter;
     //计算开始年份到结束年份的差值
     NSDateComponents *components = [YZXCalendarHelper.helper.calendar components:NSCalendarUnitMonth fromDate:startDate toDate:endDate options:NSCalendarWrapComponents];
     //每年的月份数组
@@ -85,7 +85,7 @@
                 [months removeAllObjects];
             }
         }
-        //将同一年份的月份信息出入数组
+        //将同一年份的月份信息存入数组
         [months addObject:monthModel];
         //当循环到最后一个元素时，直接保存其年份
         if (i == components.month) {

@@ -19,17 +19,19 @@
  @param endDateString 日历的结束时间(日期格式：yyyy年MM月dd日)
  @return self
  */
-- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString;
-
-@property (nonatomic, assign) BOOL         customSelect;
-
+- (instancetype)initWithFrame:(CGRect)frame
+          withStartDateString:(NSString *)startDateString
+                endDateString:(NSString *)endDateString;
+//点击回调代理
 @property (nonatomic, weak) id<YZXCalendarDelegate>         delegate;
-
 //日历单选
 @property (nonatomic, copy) NSString             *startDate;
+
+//判断是否为自定义选择（选择日期段）
+@property (nonatomic, assign) BOOL         customSelect;
 //自定义日历(可选择两个时间的范围)
 @property (nonatomic, copy) NSArray              *dateArray;
-
-@property (nonatomic, assign) NSInteger         maxChooseNumber;
+//自定义日历，控制可选择的日期的最大跨度
+@property (nonatomic, assign) NSInteger          maxChooseNumber;
 
 @end

@@ -24,7 +24,9 @@
  @param endDateString 结束的年月份（格式yyyy年MM月）
  @return self
  */
-- (instancetype)initWithFrame:(CGRect)frame withStartDateString:(NSString *)startDateString endDateString:(NSString *)endDateString;
+- (instancetype)initWithFrame:(CGRect)frame
+          withStartDateString:(NSString *)startDateString
+                endDateString:(NSString *)endDateString;
 
 @property (nonatomic, weak) id<YZXMonthlyReportViewDelegate>         delegate;
 

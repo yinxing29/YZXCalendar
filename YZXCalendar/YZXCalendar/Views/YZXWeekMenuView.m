@@ -38,8 +38,6 @@ static const CGFloat lineView_height = 0.5;
 - (void)p_initView
 {
     NSDateFormatter *formatter = [self createDateFormatter];
-    formatter.timeZone = self.calendarHelper.calendar.timeZone;
-    formatter.locale = self.calendarHelper.calendar.locale;
     NSMutableArray *days = [[formatter veryShortWeekdaySymbols] mutableCopy];
     
     [days enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

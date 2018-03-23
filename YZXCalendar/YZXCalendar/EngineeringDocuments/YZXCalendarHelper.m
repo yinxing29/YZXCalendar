@@ -75,7 +75,8 @@
 
 }
 
-- (YZXDateWithTodayType)determineWhetherForTodayWithIndexPaht:(NSIndexPath *)indexPath model:(YZXCalendarModel *)model
+- (YZXDateWithTodayType)determineWhetherForTodayWithIndexPaht:(NSIndexPath *)indexPath
+                                                        model:(YZXCalendarModel *)model
 {
     //今天
     NSDateFormatter *formatter = self.yearMonthAndDayFormatter;
@@ -124,8 +125,7 @@
 
 - (NSString *)p_calculateTheMonthWithNumber:(NSInteger)number withDate:(NSString *)dateString
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy年MM月";
+    NSDateFormatter *formatter = [self yearAndMonthFormatter];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.month = number;
     NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[formatter dateFromString:dateString] options:0];
@@ -144,8 +144,7 @@
 
 - (NSString *)p_calculateTheYearWithNumber:(NSInteger)number withDate:(NSString *)dateString
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy年";
+    NSDateFormatter *formatter = [self yearAndMonthFormatter];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.year = number;
     NSDate *textDate = [self.calendar dateByAddingComponents:components toDate:[formatter dateFromString:dateString] options:0];

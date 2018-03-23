@@ -16,6 +16,7 @@
 //对应section的行数
 @property (nonatomic, assign) NSInteger         sectionRow;
 
-- (NSArray<YZXCalendarModel *> *)achieveCalendarModelWithData:(NSDate *)startDate toDate:(NSDate *)endDate;
+- (NSArray<YZXCalendarModel *> *)achieveCalendarModelWithData:(NSDate *)startDate
+                                                       toDate:(NSDate *)endDate;
 
 @end
