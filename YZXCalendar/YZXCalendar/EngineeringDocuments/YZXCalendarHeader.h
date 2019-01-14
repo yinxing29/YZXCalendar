@@ -28,7 +28,17 @@
 // 判断是否为iPhone 6Plus/6sPlus
 #define iPhone6Plus_6sPlus [[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f
 
-#define kDevice_iPhoneX CGSizeEqualToSize(CGSizeMake(375, 812), [[UIScreen mainScreen] bounds].size)
+/*当前机型是否iPhoneX或iPhoneXs*/
+#define YZX_IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+/*当前机型是否iPhoneXR*/
+#define YZX_IPHONEXR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+
+/*当前机型是否iPhoneXsMax*/
+#define YZX_IPHONEXSMAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+/*当前机型是否iPhoneX系列*/
+#define kDevice_iPhoneX (YZX_IPHONEX || YZX_IPHONEXR || YZX_IPHONEXSMAX)
 
 #define StatusBarHeight  [[UIApplication sharedApplication] statusBarFrame].size.height
 

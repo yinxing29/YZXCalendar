@@ -356,8 +356,8 @@
 		85227231205A5E2F00C4C0A8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				85227232205A5E2F00C4C0A8 /* BaseTableView.m */,
 				85227233205A5E2F00C4C0A8 /* BaseTableView.h */,
+				85227232205A5E2F00C4C0A8 /* BaseTableView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
